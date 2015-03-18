@@ -1,0 +1,77 @@
+{
+    "meta": {
+        "limit": 20,
+        "next": "/api/v1/applicant/?username=9820453336%40aasaanjobs.com&api_key=94348c739c97f70d1b6faa911848a725b3965d08&limit=20&offset=20",
+        "offset": 0,
+        "previous": null,
+        "total_count": 54
+    },
+    "objects": [
+        {
+            "created_on": "2014-11-05T13:02:44",
+            "dealing_type": "C",
+            "employee": "/api/v1/employee/2743/",
+            "id": 167,
+            "job": "/api/v1/job_posting/40/",
+            "resource_uri": "/api/v1/applicant/167/",
+            "selection_type": "A",
+            "status_type": "SA",
+            "updated_on": "2015-02-12T13:24:08"
+        },
+        {
+            "created_on": "2014-11-05T13:03:22",
+            "dealing_type": "C",
+            "employee": "/api/v1/employee/2743/",
+            "id": 168,
+            "job": "/api/v1/job_posting/43/",
+            "resource_uri": "/api/v1/applicant/168/",
+            "selection_type": "A",
+            "status_type": "SA",
+            "updated_on": "2015-02-02T18:43:05"
+        },
+        {
+            "created_on": "2014-12-23T20:47:35",
+            "dealing_type": "C",
+            "employee": "/api/v1/employee/2743/",
+            "id": 256,
+            "job": "/api/v1/job_posting/70/",
+            "resource_uri": "/api/v1/applicant/256/",
+            "selection_type": "AA",
+            "status_type": "A",
+            "updated_on": "2015-02-02T18:48:00"
+        },
+        {
+            "created_on": "2014-12-23T22:56:07",
+            "dealing_type": "C",
+            "employee": "/api/v1/employee/2743/",
+            "id": 281,
+            "job": "/api/v1/job_posting/76/",
+            "resource_uri": "/api/v1/applicant/281/",
+            "selection_type": "AA",
+            "status_type": "A",
+            "updated_on": "2015-02-02T20:04:33"
+        },
+        {
+            "created_on": "2015-02-02T19:15:48",
+            "dealing_type": "O",
+            "employee": "/api/v1/employee/2743/",
+            "id": 520,
+            "job": "/api/v1/job_posting/25/",
+            "resource_uri": "/api/v1/applicant/520/",
+            "selection_type": "A",
+            "status_type": "SA",
+            "updated_on": "2015-02-02T19:15:48"
+        },
+        {
+            "created_on": "2015-02-07T15:59:07",
+            "dealing_type": "O",
+            "employee": "/api/v1/employee/2743/",
+            "id": 580,
+            "job": "/api/v1/job_posting/175/",
+            "resource_uri": "/api/v1/applicant/580/",
+            "selection_type": "A",
+            "status_type": "SA",
+            "updated_on": "2015-02-07T15:59:07"
+        }
+    ]
+}
