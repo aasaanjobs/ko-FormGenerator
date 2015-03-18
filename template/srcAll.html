@@ -1,0 +1,325 @@
+<!--InputType Drop-Down Select-->
+
+<script type="text/html" id="select-template">
+
+    <label data-bind="text: labelName, css: labelClass" ></label>
+	<div class="input-group">
+		<select 
+            data-bind="attr: {id: idElm, name : Name}, enable: Editable, css: ElementClass, 
+                options: Options, optionsValue:'value', optionsText:'displayText',
+                selectedOptions:Value, 
+                event: { 
+                    change: function () {$root.OnFormDatachange(idDiv(), Events().onChange)},
+                    blur: function () {$root.OnFormDatachange(idDiv(),Events().Onblur)},
+                    focus: function () {$root.OnFormDatachange(idDiv(),Events().onFocus)} 
+                }">
+        </select>
+	</div>
+
+</script>
+
+<!---->
+
+
+
+<!--InputType Drop-Down Multiselect-->
+
+<script type="text/html" id="multiselect-template">
+
+    <label data-bind="text: labelName, css: labelClass" class=""></label>
+	<div class="input-group">
+		<select style="width:400px" multiple="multiple" 
+            data-bind="attr: {id: idElm, name : Name}, 
+                options:Options, optionsValue:'value', optionsText:'displayText',
+                selectedOptions:$parent.selected2, selectedOptions:$parent.Value, 
+                valueAllowUnset: false, select2:{},
+                event: { 
+                    change: function () {$root.OnFormDatachange(idDiv(),Events().onChange)}, 
+                    blur: function () {$root.OnFormDatachange(idDiv(),Events().Onblur)},
+                    focus: function () {$root.OnFormDatachange(idDiv(),Events().onFocus)} 
+                }">
+        </select>
+	</div>
+
+</script>
+
+<!---->
+
+
+
+<!--InputType Text-->
+
+<script type="text/html" id="text-template">
+
+
+    <label data-bind="text: labelName, css: labelClass" class=""></label>
+    <input type="text" 
+        data-bind="attr: {id: idElm, name : Name, placeholder:Placeholder },
+        value:Value, css: ElementClass, enable: Editable, 
+        event: {
+            change: function () {$root.OnFormDatachange(idDiv(),Events().onChange)},
+            blur: function () {$root.OnFormDatachange(idDiv(),Events().Onblur)},
+            focus: function () {$root.OnFormDatachange(idDiv(),Events().onFocus)} 
+        }">
+    </input>
+</script>
+
+<!---->
+
+
+
+<!--InputType TextArea-->
+
+<script type="text/html" id="textArea-template">
+
+
+    <label data-bind="text: labelName, css: labelClass" class="label label-primary"></label>
+	<textarea 
+        data-bind="attr: {id:idElm, placeholder:Placeholder, value:Value},
+        css: ElementClass, enable: Editable,
+        event: {
+            change: function () {$root.OnFormDatachange(idDiv(),Events().onChange)},
+            blur: function () {$root.OnFormDatachange(idDiv(),Events().Onblur)},
+            focus: function () {$root.OnFormDatachange(idDiv(),Events().onFocus)} 
+        }">
+    </textarea>
+
+</script>
+
+<!---->
+
+
+
+<!--InputType Radio-->
+
+<script type="text/html" id="radio-template">
+
+    <label data-bind="text: labelName, css: labelClass" class=""></label>
+	<div class="radio" data-bind="foreach: Options">
+	    <label>
+			<input type="radio" 
+                data-bind="attr: { id: $parent.idElm ,name:$parent.Name},
+                value:$data.value, css: $parent.ElementClass,
+                enable: $parent.Editable, checked : $index()==0 ? $data.value : $parent.Value,    
+                event: {
+                    checked: function () {$root.OnFormDatachange($parent.idDiv(),$parent.Events().Oncheck)},
+                    change: function () {$root.OnFormDatachange($parent.idDiv(),$parent.Events().onChange)} 
+                }">
+            </input>
+			<span data-bind="text:$data.displayText"></span>
+		</label>
+	</div>
+
+</script>
+
+<!---->
+
+
+
+<!--InputType File Template-->
+
+<script type="text/html" id="file-template">
+
+
+    <label data-bind="text: labelName, css: labelClass" class=""></label>
+	<input type="file" 
+        data-bind="attr: {id: idElm, name : Name, placeholder:Placeholder },
+        value:Value, css: ElementClass, enable: Editable, 
+        event: {
+            blur: function () {$root.OnFormDatachange(idDiv(),Events().Onblur)},
+            change: function () {$root.OnFormDatachange(idDiv(),Events().onChange)}, 
+            focus: function () {$root.OnFormDatachange(idDiv(),Events().onFocus)} 
+        }">
+    </input>
+	
+</script>
+
+<!---->
+
+
+
+<!--InputType Date-->
+
+<script type="text/html" id="date-template">
+
+
+    <label data-bind="text: labelName, css: labelClass" class=""></label>
+	<div class="input-group time">
+		<input type="text" 
+            data-bind="datePicker:eventDate, format : $data.dateFormat(),
+            daysOfWeekDisabled: $data.daysOfWeekDisabled(), css: ElementClass, 
+            value: Value">
+        </input>
+		<span class="input-group-btn" data-bind="datePicker:eventDate">
+                <button class="btn btn-green" type="button">
+                	<span class="fa fa-calendar"></span>
+                </button>
+        </span>
+	</div>
+</script>
+
+<!---->
+
+
+
+
+<!--InputType Time-->
+
+<script type="text/html" id="time-template">
+    
+    
+    <label data-bind="text: labelName, css: labelClass" class=""></label>
+	<div class="input-group">
+		<input type="text" 
+            data-bind="timeValue:eventDate, css: ElementClass, value: $data.Value">
+        </input>
+		<span class="input-group-btn" data-bind="timeValue:eventDate">
+                <button class="btn btn-green" type="button">
+                	<span class="fa fa-clock-o"></span>
+                </button>
+        </span>
+	</div>
+    	
+</script>
+
+<!---->
+
+
+
+<!--InputType CheckBox-->
+
+<script type="text/html" id="checkbox-template">
+    <label data-bind="text: labelName, css: labelClass" class=""></label>
+	<div class="checkbox" data-bind="foreach: Options">
+		<label>
+			<input type="checkbox" 
+                data-bind="attr: {id: $parent.idElm, name:$data.Name},
+                checkedValue:$data.value, css: $parent.ElementClass,
+                enable: $parent.Editable, checked: $parent.Value,
+                event: {
+                    checked: function () {$root.OnFormDatachange($parent.idDiv(),$parent.Events().Oncheck)},
+                    change: function () {$root.OnFormDatachange($parent.idDiv(),$parent.Events().onChange)}
+                }">
+            </input>
+			<span data-bind="text:$data.displayText"></span>
+		</label>
+	</div>
+
+</script>
+
+<!---->
+
+
+
+<!--Label-->
+
+<script type="text/html" id="label-template">
+    <label class="col-sm-3 control-label col-lg-3" 
+        data-bind="attr: {id: idElm, name : Name}, text: labelName">
+    </label>
+</script>
+
+<!---->
+
+
+
+<!--AddField Button Template-->
+<script type="text/html" id="addfield-template">
+    <br/>
+    <!--ko if: typeof(DuplicateLimit) != "undefined" -->
+	   <button type="button" 
+            data-bind="attr: {id: idElm, name : Name}, text: labelName ,
+            enable : DuplicateLimit() >= DuplicatedCount(),  
+            event: {
+                click: function () {$root.DupField(idDiv())}
+            }">
+        </button><br/>
+    <!--/ko-->
+    <!--ko if: typeof(DuplicateLimit) === "undefined" -->
+       <button type="button" 
+            data-bind="attr: {id: idElm, name : Name}, text: labelName ,  
+            event: {
+                click: function () {$root.DupField(idDiv())}
+            }">
+        </button><br/>
+    <!--/ko-->
+    <br/>
+</script>
+
+<!---->
+
+<!--RemoveField Button Template-->
+<script type="text/html" id="removefield-template">
+<!--ko if: $data.duplicateCount > 1 -->
+        <br/>
+       <button type="button" 
+            data-bind="attr: {id: idElm, name : Name}, text: labelName , 
+            event: {
+                click: function () {$root.RemoveField(idDiv())}
+            }">
+        </button>
+<!--/ko-->
+</script>
+
+<!---->
+
+<!--Button Template-->
+<script type="text/html" id="button-template">
+
+	<button type="button" 
+        data-bind="attr: {id: idElm, name : Name}, text: labelName,
+        event: {
+            click: function () {$root.OnFormDatachange($parent.idDiv(),$parent.Events().Onclick)}
+        }">
+    </button><br/>
+
+</script>
+
+<!---->
+
+
+<!--Submit Form Template-->
+<script type="text/html" id="submit-template">
+    <br/>
+	<button type="button" 
+        data-bind="attr: {id: idElm, name : Name}, text: labelName, 
+        event: {click: function () {$root.SaveForm()}
+        }">
+    </button>
+
+</script>
+
+<!---->
+
+
+
+<!-- Form-Template-->
+
+<script type="text/html" id="form-template">
+    <div class="row">
+        <div class="col-xs-12">
+        	<form class="form-horizontal">
+                <div class="col-xs-12" data-bind="foreach: Fields">
+                    <div 
+                        data-bind="css: DivClass, template: {name: $data.Element, data: $data},
+                        attr:{id:$data.idDiv}, visible: $data.Visibility" >
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</script>
+<!---->
+
+
+<!-- UN-Form-Template-->
+
+<script type="text/html" id="unform-template">
+    <div data-bind="foreach: Fields">
+        <div 
+            data-bind="css: DivClass, template: {name: $data.Element, data: $data},
+            attr:{id:$data.idDiv}, visible: $data.Visibility" >
+        </div>
+    </div>
+</script>
+<!---->
