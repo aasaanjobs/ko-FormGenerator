@@ -22,20 +22,20 @@ field -> fields/DOM Elements of the form;
 
 key to field and idDiv should be same .
 
-In a field 4 required attributes are : ['idDiv','idElm', 'element', 'name']
+In a field 1-4 Attributes are Always required except for break-element attributes are : ['idDiv','idElm', 'element', 'name']
 
 Attributes : 1-16;
 
 Required for Each field : {
 
 1.	"name" 		:	corresponds to the DOM property name of the DOM Elements
-2.	"element" 	:	specifies which template/DOM element we want
-3.	"idElm" 	:	is id of the DOM Element we are creating.
-4.	"idDiv" 	:	is the id of the Div that contains the DOM Element/ field.
-}
 
-Additional functionality : {
-	
+2.	"element" 	:	specifies which template/DOM element we want
+
+3.	"idElm" 	:	is id of the DOM Element we are creating.
+
+4.	"idDiv" 	:	is the id of the Div that contains the DOM Element/ field.
+
 5.	"labelName"		:	label Text for your field (String)
 
 6.	"placeholder"	:	placeholder for the elements (String)
@@ -62,9 +62,12 @@ Additional functionality : {
 
 17. "events"		:	Go through events-section
 
-	For Attributes Specific to field read element-section.
-
 }
+
+Additional functionality : 
+	
+	Attributes 5-17 are Additional functionality and For Attributes Specific to field read element-section.
+
 
 
 
