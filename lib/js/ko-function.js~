@@ -300,23 +300,11 @@ AJ.koFormBuilder = function() {
 
     ///Options Format Change
     optionNameValueAssign = function(options) {
-        var dataReturn = new Array();
+        var dataReturn = new Array(options.length);
         for (var i = 0; i < options.length; i++) {
-            var exist_flag=false;
-            for(var e=0;e<dataReturn.length;e++)
-            {
-                if(dataReturn[e].value===options[i])
-                {
-                    exist_flag = true;
-                }
-            }
-            if(!exist_flag)
-            {
-                var temp_obj = {}
-                temp_obj["displayText"] = options[i];
-                temp_obj["value"] = options[i];
-                dataReturn.push(temp_obj);
-            }
+            dataReturn[i] = {};
+            dataReturn[i]["displayText"] = options[i];
+            dataReturn[i]["value"] = options[i];
         }
         return dataReturn;
     }
@@ -887,3 +875,4 @@ AJ.koFormBuilder = function() {
     }
 
 }();
+
