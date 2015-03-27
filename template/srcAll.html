@@ -3,8 +3,8 @@
 <script type="text/html" id="select-template">
 
     <label data-bind="text: labelName, css: labelClass" ></label>
-	<div class="input-group">
-		<select 
+    <div class="input-group">
+        <select 
             data-bind="attr: {id: idElm, name : Name}, enable: Editable, css: ElementClass, 
                 options: Options, optionsValue:'value', optionsText:'displayText',
                 selectedOptions:Value, 
@@ -14,7 +14,7 @@
                     focus: function () {$root.OnFormDatachange(idDiv(),Events().onFocus)} 
                 }">
         </select>
-	</div>
+    </div>
 
 </script>
 
@@ -27,8 +27,8 @@
 <script type="text/html" id="multiselect-template">
 
     <label data-bind="text: labelName, css: labelClass" class=""></label>
-	<div class="input-group">
-		<select style="width:400px" multiple="multiple" 
+    <div class="input-group">
+        <select style="width:400px" multiple="multiple" 
             data-bind="attr: {id: idElm, name : Name}, 
                 options:Options, optionsValue:'value', optionsText:'displayText',
                 selectedOptions:$parent.selected2, selectedOptions:$parent.Value, 
@@ -39,7 +39,7 @@
                     focus: function () {$root.OnFormDatachange(idDiv(),Events().onFocus)} 
                 }">
         </select>
-	</div>
+    </div>
 
 </script>
 
@@ -74,7 +74,7 @@
 
 
     <label data-bind="text: labelName, css: labelClass" class="label label-primary"></label>
-	<textarea 
+    <textarea 
         data-bind="attr: {id:idElm, placeholder:Placeholder, value:Value},
         css: ElementClass, enable: Editable,
         event: {
@@ -95,20 +95,20 @@
 <script type="text/html" id="radio-template">
 
     <label data-bind="text: labelName, css: labelClass" class=""></label>
-	<div class="radio" data-bind="foreach: Options">
-	    <label>
-			<input type="radio" 
+    <div class="radio" data-bind="foreach: Options">
+        <label>
+            <input type="radio" 
                 data-bind="attr: { id: $parent.idElm ,name:$parent.Name},
                 value:$data.value, css: $parent.ElementClass,
-                enable: $parent.Editable, checked : $index()==0 ? $data.value : $parent.Value,    
+                enable: $parent.Editable, checked : $parent.Value ,    
                 event: {
                     checked: function () {$root.OnFormDatachange($parent.idDiv(),$parent.Events().Oncheck)},
                     change: function () {$root.OnFormDatachange($parent.idDiv(),$parent.Events().onChange)} 
                 }">
             </input>
-			<span data-bind="text:$data.displayText"></span>
-		</label>
-	</div>
+            <span data-bind="text:$data.displayText"></span>
+        </label>
+    </div>
 
 </script>
 
@@ -122,7 +122,7 @@
 
 
     <label data-bind="text: labelName, css: labelClass" class=""></label>
-	<input type="file" 
+    <input type="file" 
         data-bind="attr: {id: idElm, name : Name, placeholder:Placeholder },
         value:Value, css: ElementClass, enable: Editable, 
         event: {
@@ -131,7 +131,7 @@
             focus: function () {$root.OnFormDatachange(idDiv(),Events().onFocus)} 
         }">
     </input>
-	
+    
 </script>
 
 <!---->
@@ -144,18 +144,18 @@
 
 
     <label data-bind="text: labelName, css: labelClass" class=""></label>
-	<div class="input-group time">
-		<input type="text" 
+    <div class="input-group time">
+        <input type="text" 
             data-bind="datePicker:eventDate, format : $data.dateFormat(),
             daysOfWeekDisabled: $data.daysOfWeekDisabled(), css: ElementClass, 
             value: Value">
         </input>
-		<span class="input-group-btn" data-bind="datePicker:eventDate">
+        <span class="input-group-btn" data-bind="datePicker:eventDate">
                 <button class="btn btn-green" type="button">
-                	<span class="fa fa-calendar"></span>
+                    <span class="fa fa-calendar"></span>
                 </button>
         </span>
-	</div>
+    </div>
 </script>
 
 <!---->
@@ -169,17 +169,17 @@
     
     
     <label data-bind="text: labelName, css: labelClass" class=""></label>
-	<div class="input-group">
-		<input type="text" 
+    <div class="input-group">
+        <input type="text" 
             data-bind="timeValue:eventDate, css: ElementClass, value: $data.Value">
         </input>
-		<span class="input-group-btn" data-bind="timeValue:eventDate">
+        <span class="input-group-btn" data-bind="timeValue:eventDate">
                 <button class="btn btn-green" type="button">
-                	<span class="fa fa-clock-o"></span>
+                    <span class="fa fa-clock-o"></span>
                 </button>
         </span>
-	</div>
-    	
+    </div>
+        
 </script>
 
 <!---->
@@ -190,9 +190,9 @@
 
 <script type="text/html" id="checkbox-template">
     <label data-bind="text: labelName, css: labelClass" class=""></label>
-	<div class="checkbox" data-bind="foreach: Options">
-		<label>
-			<input type="checkbox" 
+    <div class="checkbox" data-bind="foreach: Options">
+        <label>
+            <input type="checkbox" 
                 data-bind="attr: {id: $parent.idElm, name:$data.Name},
                 checkedValue:$data.value, css: $parent.ElementClass,
                 enable: $parent.Editable, checked: $parent.Value,
@@ -201,9 +201,9 @@
                     change: function () {$root.OnFormDatachange($parent.idDiv(),$parent.Events().onChange)}
                 }">
             </input>
-			<span data-bind="text:$data.displayText"></span>
-		</label>
-	</div>
+            <span data-bind="text:$data.displayText"></span>
+        </label>
+    </div>
 
 </script>
 
@@ -227,7 +227,7 @@
 <script type="text/html" id="addfield-template">
     <br/>
     <!--ko if: typeof(DuplicateLimit) != "undefined" -->
-	   <button type="button" 
+       <button type="button" 
             data-bind="attr: {id: idElm, name : Name}, text: labelName ,
             enable : DuplicateLimit() >= DuplicatedCount(),  
             event: {
@@ -266,7 +266,7 @@
 <!--Button Template-->
 <script type="text/html" id="button-template">
 
-	<button type="button" 
+    <button type="button" 
         data-bind="attr: {id: idElm, name : Name}, text: labelName,
         event: {
             click: function () {$root.OnFormDatachange($parent.idDiv(),$parent.Events().Onclick)}
@@ -281,7 +281,7 @@
 <!--Submit Form Template-->
 <script type="text/html" id="submit-template">
     <br/>
-	<button type="button" 
+    <button type="button" 
         data-bind="attr: {id: idElm, name : Name}, text: labelName, 
         event: {click: function () {$root.SaveForm()}
         }">
@@ -298,7 +298,7 @@
 <script type="text/html" id="form-template">
     <div class="row">
         <div class="col-xs-12">
-        	<form class="form-horizontal">
+            <form class="form-horizontal">
                 <div class="col-xs-12" data-bind="foreach: Fields">
                     <div 
                         data-bind="css: DivClass, template: {name: $data.Element, data: $data},

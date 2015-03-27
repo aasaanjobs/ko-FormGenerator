@@ -1,19 +1,12 @@
 {
   "name": "ko-form-generator",
-  "version": "1.1.8",
+  "version": "1.2.2",
   "homepage": "https://github.com/aasaanjobs/ko-FormGenerator",
   "authors": [
     "nilesh soni"
   ],
   "description": "JSON based Form Generator using KnockoutJS",
   "main": "koFormGen/lib/js/ko-function.js",
-  "moduleType": [
-    "amd",
-    "es6",
-    "globals",
-    "node",
-    "yui"
-  ],
   "keywords": [
     "knockoutjs",
     "form",
@@ -34,5 +27,12 @@
     "font-awesome": ">=4.2.0",
     "select2": ">=3.4.8"
   },
-  "private": true
+  "private": true,
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node",
+    "yui"
+  ]
 }
