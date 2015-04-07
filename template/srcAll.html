@@ -150,10 +150,8 @@
             daysOfWeekDisabled: $data.daysOfWeekDisabled(), css: ElementClass, 
             value: Value">
         </input>
-        <span class="input-group-btn" data-bind="datePicker:eventDate">
-                <button class="btn btn-green" type="button">
-                    <span class="fa fa-calendar"></span>
-                </button>
+        <span class="input-group-addon btn">
+                <i class="fa fa-calendar" data-bind="datePicker:eventDate"></i>
         </span>
     </div>
 </script>
@@ -169,17 +167,11 @@
     
     
     <label data-bind="text: labelName, css: labelClass" class=""></label>
-    <div class="input-group">
-        <input type="text" 
-            data-bind="timeValue:eventDate, css: ElementClass, value: $data.Value">
-        </input>
-        <span class="input-group-btn" data-bind="timeValue:eventDate">
-                <button class="btn btn-green" type="button">
-                    <span class="fa fa-clock-o"></span>
-                </button>
-        </span>
-    </div>
-        
+    <div class="input-group bootstrap-timepicker">
+            <input id="timepicker1" type="text" class="input-small" data-bind="timeValue:eventDate, css: ElementClass, value: $data.Value">
+            <span class="input-group-addon btn"><i class="fa fa-clock-o"></i></span>
+        </div>
+
 </script>
 
 <!---->
