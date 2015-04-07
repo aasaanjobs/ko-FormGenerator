@@ -1,6 +1,10 @@
 {
   "name": "ko-form-generator",
+<<<<<<< HEAD
   "version": "1.3.3",
+=======
+  "version": "1.3.2",
+>>>>>>> f5c36f86fd5528018c1e2883269beb428a12fea6
   "homepage": "https://github.com/aasaanjobs/ko-FormGenerator",
   "authors": [
     "nilesh soni"
