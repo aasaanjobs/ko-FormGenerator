@@ -1,3 +1,5 @@
+
+
 <!--InputType Drop-Down Select-->
 
 <script type="text/html" id="select-template">
@@ -51,10 +53,43 @@
 
 <script type="text/html" id="text-template">
 
-
     <label data-bind="text: labelName, css: labelClass" class=""></label>
     <input type="text" 
         data-bind="attr: {id: idElm, name : Name, placeholder:Placeholder },
+        value:Value, css: ElementClass, enable: Editable, 
+        event: {
+            change: function () {$root.OnFormDatachange(idDiv(),Events().onChange)},
+            blur: function () {$root.OnFormDatachange(idDiv(),Events().Onblur)},
+            focus: function () {$root.OnFormDatachange(idDiv(),Events().onFocus)} 
+        }">
+    </input>
+</script>
+
+<!---->
+
+
+<!--InputType Location-->
+
+<script type="text/html" id="location-template">
+    <label data-bind="text: labelName, css: labelClass" class=""></label>
+    <input type="hidden" id="pac_location_object" data-bind="attr: {name : Name}, value: $parent.Value">
+    <input id="pac_location_object" type="text" data-bind="attr: {placeholder:Placeholder }, css: ElementClass, enable: Editable, addressAutocomplete: Place">
+    
+    </input>
+</script>
+
+<!---->
+
+
+
+<!--InputType Number-->
+
+<script type="text/html" id="number-template">
+
+
+    <label data-bind="text: labelName, css: labelClass" class=""></label>
+    <input type="number" 
+        data-bind="attr: {id: idElm, name : Name, placeholder:Placeholder, min : Min , max : Max },
         value:Value, css: ElementClass, enable: Editable, 
         event: {
             change: function () {$root.OnFormDatachange(idDiv(),Events().onChange)},
