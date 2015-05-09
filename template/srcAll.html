@@ -73,7 +73,7 @@
 <script type="text/html" id="location-template">
     <label data-bind="text: labelName, css: labelClass" class=""></label>
     <input type="hidden" id="pac_location_object" data-bind="attr: {name : Name}, value: $parent.Value">
-    <input id="pac_location_object" type="text" data-bind="attr: {placeholder:Placeholder }, css: ElementClass, enable: Editable, addressAutocomplete: Place">
+    <input id="pac_location_object" type="text" data-bind="attr: {placeholder:Placeholder }, css: ElementClass, enable: Editable, addressAutocomplete: Place, value : $parent.TempPlace">
     
     </input>
 </script>
