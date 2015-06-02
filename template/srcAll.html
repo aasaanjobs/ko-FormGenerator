@@ -110,7 +110,7 @@
 
     <label data-bind="text: labelName, css: labelClass" class="label label-primary"></label>
     <textarea 
-        data-bind="attr: {id:idElm, placeholder:Placeholder, value:Value},
+        data-bind="value:Value, attr: {id:idElm, placeholder:Placeholder},
         css: ElementClass, enable: Editable,
         event: {
             change: function () {$root.OnFormDatachange(idDiv(),Events().onChange)},
